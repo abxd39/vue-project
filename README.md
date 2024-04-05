@@ -43,3 +43,10 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+## 使用 tsc 命令行工具需要 安装
+
+```sh
+npm install typescipt --save-dev
+
+```
