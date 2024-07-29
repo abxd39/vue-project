@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-import { MyPick } from './pick'
-
 type User = {
   Id: number
   Name: string
@@ -13,21 +10,15 @@ let u: User = {
   Age: 29
 }
 
-type NewUser = MyPick<User, 'Name' | 'Age'>
-
-let u1: NewUser = {
+let u1: User = {
   Id: 11,
-  Name: 'er',
-  Age: 33
+  Name: 'wy1',
+  Age: 30
 }
-
 console.log('-------u---------', u)
 console.log('-------u---------', u1)
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <title>HomeView</title>
 </template>
-../../pick

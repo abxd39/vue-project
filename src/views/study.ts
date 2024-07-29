@@ -1,11 +1,28 @@
-export const useApi = async<T = any> (
-    request: FetchRequest,
-    options?: FetchOptions<'json'>
-  ) => {
-    return await _useApi<IApiBase<T>>(request, options);
-  };
-  ————————————————
-  
-                              版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
-                          
-  原文链接：https://blog.csdn.net/u011313034/article/details/131111963
+
+
+class User {
+    public name: string;
+    public age: number;
+    public email: string;
+
+    constructor(data: any) {
+        this.name = data.name;
+        this.age = data.age;
+        this.email = data.email;
+    }
+
+    public isAdult(): boolean {
+        return this.age >= 18;
+    }
+}
+async function fetchUser01(): Promise<User> {
+    const response = await fetch('https://api.example.com/user');
+    const data = await response.json();
+    return data as User;
+}
+
+async function fetchUser(): Promise<User> {
+    const response = await fetch('https://api.example.com/user');
+    const data = await response.json();
+    return new User(data);
+}
