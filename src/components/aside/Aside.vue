@@ -8,11 +8,12 @@
 </template>
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+const router = useRouter()
 
 function gotoPage(key: string, keyPath: string[]) {
   console.log('key', key)
   console.log('keyPath', keyPath)
-  const router = useRouter()
+
   router.push('/about')
 }
 </script>
